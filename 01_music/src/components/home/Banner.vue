@@ -3,3 +3,9 @@
       <img class="img-fluid" src="/img/banner1.png">
   </div>
 </template>
+
+<script>
+export default {
+
+};
+</script>

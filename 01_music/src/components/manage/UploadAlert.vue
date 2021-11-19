@@ -14,7 +14,7 @@ import { mapGetters } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters(['getUploadErrors']),
+    ...mapGetters('manageModule', { getUploadErrors: 'getUploadErrors' }),
   },
 };
 </script>

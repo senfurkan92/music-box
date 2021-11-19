@@ -20,7 +20,7 @@ import { mapGetters } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters(['getSongs']),
+    ...mapGetters('manageModule', { getSongs: 'getSongs' }),
     getList() {
       const array = this.getSongs.map((x) => ({
         name: x.file.name,

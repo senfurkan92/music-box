@@ -138,7 +138,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(['signUpAsync']),
+    ...mapActions('userModule', { signUpAsync: 'signUpAsync' }),
     async submit() {
       const result = await this.signUpAsync(this.signUp);
       if (result.data.success) {

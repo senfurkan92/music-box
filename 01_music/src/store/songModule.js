@@ -1,6 +1,7 @@
 import axios from '../config/axiosConfig';
 
 const module = {
+  namespaced: true,
   state: () => ({
     playableSongs: [],
     onFetch: false,

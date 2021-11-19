@@ -5,14 +5,14 @@ module.exports = {
       fallbackLocale: 'en',
       localeDir: 'locales',
       enableInSFC: false,
-      enableLegacy: false
-      // locale: 'en',
-      // fallbackLocale: 'en',
-      // localeDir: 'locales',
-      // enableLegacy: true,
-      // runtimeOnly: false,
-      // compositionOnly: false,
-      // fullInstall: true,
+      enableLegacy: false,
+    },
+  },
+  pwa: {
+    name: 'Music App',
+    themeColor: '#ff5e3a',
+    manifestOptions: {
+      short_name: 'Music',
     },
   },
 };

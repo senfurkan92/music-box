@@ -59,7 +59,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(['updateSongAsync', 'deleteSongAsync']),
+    ...mapActions('manageModule', { updateSongAsync: 'updateSongAsync', deleteSongAsync: 'deleteSongAsync' }),
     submit() {
       const payload = {
         /* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */

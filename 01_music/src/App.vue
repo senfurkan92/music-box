@@ -19,8 +19,9 @@ export default {
     SignForm,
   },
   methods: {
-    ...mapActions(['autoSignIn', 'fetchCurrentSongs']),
-    ...mapMutations(['setUser', 'setToken']),
+    ...mapActions('userModule', { autoSignIn: 'autoSignIn' }),
+    ...mapActions('manageModule', { fetchCurrentSongs: 'fetchCurrentSongs' }),
+    ...mapMutations('userModule', { setUser: 'setUser', setToken: 'setToken' }),
   },
   created() {
     this.autoSignIn()

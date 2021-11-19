@@ -2,6 +2,7 @@ import Cookies from 'js-cookie';
 import axios from '../config/axiosConfig';
 
 const module = {
+  namespaced: true,
   state: () => ({
     user: null,
     token: null,

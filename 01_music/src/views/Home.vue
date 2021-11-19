@@ -25,7 +25,7 @@ export default {
     this.fetchPlayableSongs();
   },
   methods: {
-    ...mapActions(['fetchPlayableSongs']),
+    ...mapActions('songModule', { fetchPlayableSongs: 'fetchPlayableSongs' }),
     onbottomFetch() {
       document.addEventListener('scroll', () => {
         const allHeight = document.documentElement.scrollHeight;

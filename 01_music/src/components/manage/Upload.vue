@@ -39,8 +39,8 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(['setSongs', 'shiftSong']),
-    ...mapActions(['uploadSongAsync']),
+    ...mapMutations('manageModule', { setSongs: 'setSongs', shiftSong: 'shiftSong' }),
+    ...mapActions('manageModule', { uploadSongAsync: 'uploadSongAsync' }),
     upload(e) {
       this.dragProcess = false;
       const files = [...e.dataTransfer.files];

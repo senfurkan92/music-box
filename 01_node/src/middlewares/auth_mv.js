@@ -2,12 +2,10 @@ const {verifyToken} = require('../config/auth');
 
 module.exports = (...roles) => {
     return (req, resp, next) => {
-        let token = "";
-
+        let token = null;
         // seesion veya header da token yok ise unauthorized
         // var ise token jwt verify
         if(req.session.token || req.headers["authorization"]) {           
-
             // token assign
             if(req.session.token) {
                 token = req.session.token;
@@ -15,19 +13,24 @@ module.exports = (...roles) => {
                 token = req.headers["authorization"];
             }
 
-            // token user scrape
-            let decode = verifyToken(token);
+            if(token && token != 'undefined')
+            {
+                // token user scrape
+                let decode = verifyToken(token);
 
-            if (decode) {
-                // if role required
-                if(roles.length > 0) {
-                    if(decode.role && roles.includes(decode.role)) {
-                        next();
+                if (decode) {
+                    // if role required
+                    if(roles.length > 0) {
+                        if(decode.role && roles.includes(decode.role)) {
+                            next();
+                        } else {
+                            resp.status(401).send("unauthorized");
+                        }
                     } else {
-                        resp.status(401).send("unauthorized");
+                        next();
                     }
                 } else {
-                    next();
+                    resp.status(401).send("unauthorized");
                 }
             } else {
                 resp.status(401).send("unauthorized");

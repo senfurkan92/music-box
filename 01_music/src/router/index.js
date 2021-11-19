@@ -40,7 +40,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth) {
-    if (store.getters.getUser && store.getters.getToken) {
+    if (store.getters['userModule/getUser'] && store.getters['userModule/getToken']) {
       next();
     } else {
       next({ name: 'Home' });

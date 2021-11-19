@@ -46,13 +46,13 @@ import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters(['getUser', 'getToken']),
+    ...mapGetters('userModule', { getUser: 'getUser', getToken: 'getToken' }),
     isAuth() {
       return (this.getUser && this.getToken);
     },
   },
   methods: {
-    ...mapMutations(['signOut']),
+    ...mapMutations('userModule', { signOut: 'signOut' }),
     out() {
       this.signOut();
       this.$router.replace('/');

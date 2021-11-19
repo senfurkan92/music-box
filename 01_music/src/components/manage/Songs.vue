@@ -21,7 +21,7 @@ export default {
     Song,
   },
   computed: {
-    ...mapGetters(['getCurrentSongs']),
+    ...mapGetters('manageModule', { getCurrentSongs: 'getCurrentSongs' }),
   },
 };
 </script>

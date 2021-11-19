@@ -35,7 +35,7 @@ export default {
     Track,
   },
   computed: {
-    ...mapGetters(['getPlayableSongs']),
+    ...mapGetters('songModule', { getPlayableSongs: 'getPlayableSongs' }),
   },
 };
 </script>

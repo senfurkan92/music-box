@@ -64,8 +64,8 @@ export default {
     };
   },
   methods: {
-    ...mapActions(['signInAsync']),
-    ...mapMutations(['setUser', 'setToken']),
+    ...mapActions('userModule', { signInAsync: 'signInAsync' }),
+    ...mapMutations('userModule', { setUser: 'setUser', setToken: 'setToken' }),
     async submit() {
       const result = await this.signInAsync(this.signIn);
       if (result.data.success) {

@@ -1,7 +1,5 @@
 import { createStore } from 'vuex';
-import userModule from './userModule';
-import manageModule from './manageModule';
-import songModule from './songModule';
+import modules from './module';
 
 export default createStore({
   state: {
@@ -19,9 +17,5 @@ export default createStore({
   },
   actions: {
   },
-  modules: {
-    userModule,
-    manageModule,
-    songModule,
-  },
+  modules,
 });
