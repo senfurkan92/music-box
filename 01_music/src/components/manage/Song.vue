@@ -3,7 +3,7 @@
         <div class="border border-2 rounded" :class="{'bg-show': show}">
             <div class="d-flex align-items-center justify-content-between">
                 <div class="p-2 bd-highlight align-self-center">
-                    <h6><b>{{index + 1}}.</b> {{song.name}}</h6>
+                    <h6 class="name"><b>{{index + 1}}.</b> <span>{{song.name}}</span></h6>
                     <small>{{song.path}}</small>
                 </div>
                 <div class="p-2 bd-highlight btn-group btn-group-sm align-self-center" v-if="!show">
